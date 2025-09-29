@@ -6,7 +6,7 @@ pipeline {
             steps {
                 // Подключение к Git
                 git branch: 'main',
-                url: 'git@github.com:username/repo.git',
+                url: 'git@github.com:arkt1kkburnn/test',
                 credentialsId: 'git-ssh'
             }
         }
