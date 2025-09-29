@@ -1,3 +1,4 @@
+groovy
 pipeline {
     agent any  // Используем любой доступный агент Jenkins
 
