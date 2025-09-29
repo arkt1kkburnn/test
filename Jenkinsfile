@@ -7,7 +7,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/arkt1kkburnn/test.git',
+                    url: 'git@github.com:arkt1kkburnn/test.git',
                     credentialsId: 'git-ssh'
             }
         }
