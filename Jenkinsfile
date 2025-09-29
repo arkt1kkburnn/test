@@ -1,38 +1,32 @@
-groovy
 pipeline {
-    agent any  // Используем любой доступный агент Jenkins
+    agent any
 
     stages {
         stage('Checkout') {
             steps {
-                // Подключение к Git
                 git branch: 'main',
-                url: 'git@github.com:arkt1kkburnn/test.git',
-                credentialsId: 'git-ssh'
+                    url: 'https://github.com/arkt1kkburnn/test.git',
+                    credentialsId: 'github-token'
             }
         }
-
         stage('Build') {
             steps {
-                // Здесь команды сборки, например
-                sh 'echo "Сборка проекта..."'
+                bat 'echo Сборка проекта...'
             }
         }
-
         stage('Test') {
             steps {
-                // Запуск тестов
-                sh 'echo "Запуск тестов..."'
+                bat 'echo Тесты проходят...'
             }
         }
     }
 
     post {
         success {
-            echo "✅ Пайплайн успешно выполнен"
+            echo "✅ Пайплайн выполнен успешно!"
         }
         failure {
-            echo "❌ Пайплайн упал"
+            echo "❌ Пайплайн завершился с ошибкой!"
         }
     }
 }
