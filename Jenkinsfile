@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Подключение к Git
-                git branch: 'main', url: 'https://github.com/username/repo.git'
+                git branch: 'main', url: 'https://github.com/arkt1kkburnn/test'
             }
         }
 
